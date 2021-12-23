@@ -1,4 +1,4 @@
-from password_reset.utils.base_email import BaseEmailMessage
+from utils.base_email import BaseEmailMessage
 
 
 class PasswordResetEmail(BaseEmailMessage):

@@ -1,6 +1,6 @@
 from django.urls import path
 
-from password_reset.views import reset_password
+from .views import reset_password
 
 
 urlpatterns = [

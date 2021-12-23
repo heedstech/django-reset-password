@@ -2,7 +2,7 @@ import random
 import string
 import hashlib
 
-from password_reset.models import RecoveryCode
+from ..models import RecoveryCode
 
 
 def generate_code(user, size=6, letters=True, numbers=True, attempt=0):
