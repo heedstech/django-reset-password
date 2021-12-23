@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from .utils.code_generator import generate_code
 from .utils.email import PasswordResetEmail
-from .serializer import SendEmailResetSerializer
+from .serializers import SendEmailResetSerializer
 
 
 @api_view(['POST'])
