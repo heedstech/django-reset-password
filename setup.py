@@ -14,7 +14,9 @@ setup(
     author_email='willian.abdom@gmail.com',
     url='https://github.com/heedstech/django-reset-password',
     license='MIT',
+    python_requires=">=3.7",
     install_requires=[
-        'Django>=1.6,<1.7',
-    ]
+        'django',
+        'djangorestframework'
+    ],
 )
