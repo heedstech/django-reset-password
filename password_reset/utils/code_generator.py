@@ -40,19 +40,20 @@ def generate_code(user, size=6, letters=True, numbers=True, attempt=0):
     random.shuffle(l)
     code = ''.join(l)
 
-    hash_code = hashlib.sha256((
-        user.email +
-        user.password +
-        code
-    ).encode('utf-8')).hexdigest().upper()
+    hash_code = generate_hash(code, user)
 
     try:
-        # RecoveryCode.objects.create(user=user, hash_code=hash_code)
-        recovey = RecoveryCode(user=user, hash_code=hash_code)
-        recovey.save()
-        # print(recovey.)
+        RecoveryCode(user=user, hash_code=hash_code).save()
     except Exception as e:
         print(e)
         code = generate_code(user, attempt=attempt)
 
     return code
+
+
+def generate_hash(code, user):
+    return hashlib.sha256((
+        user.email +
+        user.password +
+        code
+    ).encode('utf-8')).hexdigest().upper()
