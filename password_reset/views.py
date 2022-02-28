@@ -18,7 +18,10 @@ def reset_password(request):
 
     if user:
         code = generate_code(user)
-        context = {"code": code}
+        context = {
+            "code": code,
+            "email": user.email
+        }
         to = [user.email]
         PasswordResetEmail(request, context).send(to)
 
