@@ -5,7 +5,7 @@ here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.rst')).read()
 
 setup(
-    name='djangopr',
+    name='django-reset-password',
     version='1.0.0',
     packages=find_packages(exclude=['tests']),
     description='Django password reset with code.',
