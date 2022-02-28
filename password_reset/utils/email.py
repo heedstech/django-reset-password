@@ -7,7 +7,7 @@ class PasswordResetEmail(BaseEmailMessage):
     def get_context_data(self):
         context = super().get_context_data()
         context["code"] = context.get("code")
-        context["email"] = context.get("email")
+        context["user"] = context.get("user")
         return context
 
 

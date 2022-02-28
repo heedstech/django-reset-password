@@ -20,7 +20,7 @@ def reset_password(request):
         code = generate_code(user)
         context = {
             "code": code,
-            "email": user.email
+            "user": user,
         }
         to = [user.email]
         PasswordResetEmail(request, context).send(to)
